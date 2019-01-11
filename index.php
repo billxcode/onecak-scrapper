@@ -34,7 +34,6 @@ function printResult($client, $main_site, $count_page, $page, $crawler)
 {
     $crawler->filter('td > a > img')->each(function($node) use ($count_page){
         appendImage($node->attr('src'));
-        readfile($node->attr('src'));
     });
     
     $crawler->filter('a')->each(function($node) use($count_page, $page, $main_site, $client) {
